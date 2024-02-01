@@ -1,0 +1,106 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Health Care Copilot</span>
+  
+      <!-- Navigation links -->
+      <span class="example-spacer"></span>
+      <a mat-button routerLink="/home">Home</a>
+      <a mat-button routerLink="/about">About</a>
+      <a mat-button routerLink="/blog">Blog</a>
+      <a mat-button routerLink="/contact">Contact</a>
+  
+      <!-- Appointment button -->
+      <span class="spacer"></span>
+      <button mat-raised-button color="accent">Make an Appointment</button>
+  
+      <!-- Sign Out button -->
+    <button mat-icon-button matTooltip="Sign-out">
+    <mat-icon>logout</mat-icon>
+  </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  
+  <!-- Sidebar -->
+  
+  <mat-drawer-container class="container">
+    <mat-drawer mode="side" opened #drawer class="mat-accent">
+      <ul>
+        <li><a mat-button routerLink="/doctor"><mat-icon>local_hospital</mat-icon>Doctor</a></li>
+        <li><a mat-button routerLink="/patient"><mat-icon>person</mat-icon>Patient's Info</a></li>
+        <li><a mat-button routerLink="/medicine"><mat-icon>local_pharmacy</mat-icon>Medicine</a></li>
+        <li><a mat-button routerLink="/report"><mat-icon>insert_chart</mat-icon>Report</a></li>
+        <li><a mat-button routerLink="/meet-scheduler"><mat-icon>event</mat-icon>Appointment Scheduler</a></li>
+        <li><a mat-button routerLink="/book-appointment"><mat-icon>calendar_today</mat-icon>Book Appointment</a></li>
+        <li><a mat-button routerLink="/payment"><mat-icon>payment</mat-icon>Payment</a></li>
+        <li><a mat-button routerLink="/video-conferencing"><mat-icon>videocam</mat-icon>Online Checkup</a></li>
+      </ul>
+      
+    </mat-drawer>
+
+    
+    <div class="content">
+      <img src="https://www.hfhdelhi.org/assets/front/images/slider-5.jpg" alt="Background Image">
+      <div class="slogan">
+        THE MOST VALUABLE THING IS YOUR HEALTH
+      </div>
+      <div class="sub-slogan">
+        We care about your health. Even the all-powerful Pointing has no control about the blind texts. It is an almost unorthographic life.
+      </div>
+    </div>
+    
+    
+    
+    <div class="card-container">
+      <mat-card class="card">
+        <mat-icon>calendar_today</mat-icon>
+        <mat-card-header>
+          <mat-card-title>Book Appointment</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+      
+      <mat-card class="card">
+        <mat-icon>videocam</mat-icon>
+        <mat-card-header>
+          <mat-card-title>Consult Online</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+      
+      <mat-card class="card">
+        <mat-icon>local_hospital</mat-icon>
+        <mat-card-header>
+          <mat-card-title>Find Doctors</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+      
+      <mat-card class="card">
+        <mat-icon >event</mat-icon>
+        <mat-card-header>
+          <mat-card-title>Appointment Status</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+    </div>
+    
+    <marquee class="marquee">Build your Pro Health. This health program is based on 's pioneering efforts in preventive care for almost 40 years and over 22 million health checks.</marquee>
+    
+    <div class="proactive-container">
+      <img src="https://www.shutterstock.com/image-photo/cheerful-young-arabic-general-practitioner-600nw-2182656031.jpg" alt="Proactive Health">
+      <div class="text-container">
+        <h2>Get proactive - Be ProHealth!</h2>
+        <h3>Build your ProHealth plan now</h3>
+        <p>If you want to boost your health and wellbeing, there are plenty of natural and home remedies to try. <br>
+          When it comes to knowing what’s healthy, even qualified experts often seem to hold opposing opinions. This can make it difficult to figure out what you should actually be doing to optimize your health. <br>
+          Hydration is an important and often overlooked marker of health. Staying hydrated helps ensure that your body is functioning optimally and that your blood volume is sufficient (34Trusted Source).
+          
+          Drinking water is the best way to stay hydrated, as it's free of calories, sugar, and additives.
+          
+          Although there's no set amount that everyone needs per day, aim to drink enough so that your thirst is adequately quenched</p>
+        </div>
+      </div>
+      <footer class="footer">
+        Copyright &#64;HealthCareCopilot 2024
+      </footer>
+      
+    </mat-drawer-container>

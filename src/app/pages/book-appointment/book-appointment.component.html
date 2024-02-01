@@ -1,0 +1,48 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Health Care Copilot</span>
+  
+      <!-- Navigation links -->
+      <span class="example-spacer"></span>
+      <a mat-button routerLink="/home">Home</a>
+      <a mat-button routerLink="/about">About</a>
+      <a mat-button routerLink="/blog">Blog</a>
+      <a mat-button routerLink="/contact">Contact</a>
+  
+      <!-- Appointment button -->
+      <span class="spacer"></span>
+      <button mat-raised-button color="accent">Make an Appointment</button>
+  
+      <!-- Sign Out button -->
+    <button mat-icon-button matTooltip="Sign-out">
+    <mat-icon>logout</mat-icon>
+  </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  
+  <!-- Sidebar -->
+
+ <mat-drawer-container class="container">
+    <mat-drawer mode="side" opened #drawer class="mat-accent">
+        <ul>
+            <li><a mat-button routerLink="/doctor"><mat-icon>local_hospital</mat-icon>Doctor</a></li>
+            <li><a mat-button routerLink="/patient"><mat-icon>person</mat-icon>Patient's Info</a></li>
+            <li><a mat-button routerLink="/medicine"><mat-icon>local_pharmacy</mat-icon>Medicine</a></li>
+            <li><a mat-button routerLink="/report"><mat-icon>insert_chart</mat-icon>Report</a></li>
+            <li><a mat-button routerLink="/meet-scheduler"><mat-icon>event</mat-icon>Appointment Scheduler</a></li>
+            <li><a mat-button routerLink="/book-appointment"><mat-icon>calendar_today</mat-icon>Book Appointment</a></li>
+            <li><a mat-button routerLink="/payment"><mat-icon>payment</mat-icon>Payment</a></li>
+            <li><a mat-button routerLink="/video-conferencing"><mat-icon>videocam</mat-icon>Online Checkup</a></li>
+          </ul>
+          
+  </mat-drawer>
+  
+  
+  <form [formGroup]="appointmentForm" (ngSubmit)="bookAppointment()">
+      <!-- Form fields for patient selection, doctor selection, date and time, reason for visit, and appointment type -->
+      <button type="submit">Book Appointment</button>
+    </form>
+</mat-drawer-container>

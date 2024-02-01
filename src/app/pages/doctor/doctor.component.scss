@@ -1,0 +1,118 @@
+.doctor-image {
+    width: 100px;  /* adjust as needed */
+    height: 90px; /* adjust as needed */
+    object-fit: cover; /* this will ensure that the image covers the entire space of the img element without stretching */
+  }
+  .header-title {
+    color: #333; /* change the color */
+    font-size: 2em; /* change the font size */
+    text-align: center; /* center the text */
+    /* add any other styles as needed */
+  }
+  .add-doctor-button {
+    position: absolute; /* this will take the button out of the normal flow of the document */
+    top: 10px; /* adjust as needed */
+    left: 10px; /* adjust as needed */
+    /* add any other styles as needed */
+  }
+  .print-button {
+    position: absolute; /* this will take the button out of the normal flow of the document */
+    top: 10px; /* adjust as needed */
+    right: 10px; /* adjust as needed */
+    /* add any other styles as needed */
+  }
+  .my-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Style the table rows */
+  .my-table mat-row {
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Add hover effect to the table rows */
+  .my-table mat-row:hover {
+    background-color: #f5f5f5;
+  }
+  
+  /* Style the table header cells */
+  .my-table mat-header-cell {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  /* Style the table cells */
+  .my-table mat-cell {
+    padding: 10px;
+  }
+  .my-table .email-column {
+    width: 25%; /* adjust this value as needed */
+  }
+  mat-toolbar {
+    .example-spacer {
+      flex: 1 1 auto;
+    }
+  
+    .spacer {
+      flex: 1 1 auto;
+    }
+  
+    .search-container {
+      display: flex;
+      justify-content: center;
+      width: 50%;
+      margin-top: 2%;
+    }
+  
+    .example-full-width {
+      width: 90%;
+      height: 90%;
+    }
+  
+    mat-icon {
+      color: rgba(254, 253, 253, 0.941);
+    }
+  }
+  
+  .container {
+    height: 90%;
+    width: 100%;
+  }
+  
+  mat-drawer {
+    width: 250px;
+    box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.3);
+  }
+  
+  mat-drawer-content {
+    padding: 20px;
+  }
+  mat-drawer {
+    background-color: #ff6961; /* pastel red */
+    font-family: 'Sans-serif';
+    width: 250px;
+    box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.3);
+  
+    h2 {
+      color: #fff;
+    }
+  
+    ul {
+      list-style-type: none;
+      padding: 0;
+  
+      li {
+        margin-bottom: 10px;
+  
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  body {
+    overflow: hidden;
+  }
+  

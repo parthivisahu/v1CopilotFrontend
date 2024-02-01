@@ -1,0 +1,92 @@
+<!-- patient-details.component.html -->
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Health Care Copilot</span>
+
+    <!-- Navigation links -->
+    <span class="example-spacer"></span>
+    <a mat-button routerLink="/home">Home</a>
+    <a mat-button routerLink="/about">About</a>
+    <a mat-button routerLink="/blog">Blog</a>
+    <a mat-button routerLink="/contact">Contact</a>
+
+    <!-- Appointment button -->
+    <span class="spacer"></span>
+    <button mat-raised-button color="accent">Make an Appointment</button>
+
+    <!-- Sign Out button -->
+  <button mat-icon-button matTooltip="Sign-out">
+  <mat-icon>logout</mat-icon>
+</button>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<!-- Sidebar -->
+
+<mat-drawer-container class="container">
+  <mat-drawer mode="side" opened #drawer class="mat-accent">
+      <ul>
+          <li><a mat-button routerLink="/doctor"><mat-icon>local_hospital</mat-icon>Doctor</a></li>
+          <li><a mat-button routerLink="/patient"><mat-icon>person</mat-icon>Patient's Info</a></li>
+          <li><a mat-button routerLink="/medicine"><mat-icon>local_pharmacy</mat-icon>Medicine</a></li>
+          <li><a mat-button routerLink="/report"><mat-icon>insert_chart</mat-icon>Report</a></li>
+          <li><a mat-button routerLink="/meet-scheduler"><mat-icon>event</mat-icon>Appointment Scheduler</a></li>
+          <li><a mat-button routerLink="/book-appointment"><mat-icon>calendar_today</mat-icon>Book Appointment</a></li>
+          <li><a mat-button routerLink="/payment"><mat-icon>payment</mat-icon>Payment</a></li>
+          <li><a mat-button routerLink="/video-conferencing"><mat-icon>videocam</mat-icon>Online Checkup</a></li>
+        </ul>
+        
+</mat-drawer>
+<div class="patient-details">
+
+  <h2></h2>
+  <div class="patient-info">
+
+    <mat-card *ngIf="patient" class="mat-elevation-z4" [@cardState]="state">
+      <mat-card-header class="mat-blue"> <!-- Angular Material Blue -->
+        <img class="patient-image" mat-card-avatar src="{{patient.image}}" alt="Patient image">
+    <mat-card-title><mat-icon>person</mat-icon> {{ patient.name }}</mat-card-title>
+    <mat-card-subtitle><mat-icon>cake</mat-icon> {{ patient.age }} years old</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p><mat-icon>home</mat-icon> Address: {{ patient.address }}</p>
+    <p><mat-icon>email</mat-icon> Email: {{ patient.email }}</p>
+    <p><mat-icon>phone</mat-icon> Phone: {{ patient.phone }}</p>
+    <p><mat-icon>local_hospital</mat-icon> Blood Group: {{ patient.bloodGroup }}</p>
+    <p><mat-icon>fitness_center</mat-icon> Weight: {{ patient.weight }}</p>
+    <p><mat-icon>height</mat-icon> Height: {{ patient.height }}</p>
+    <p><mat-icon>local_pharmacy</mat-icon> Department in Injury: {{ patient.injuryDepartment }}</p>
+    <p><mat-icon>attach_money</mat-icon> Checkup Cost: {{ patient.cost }}</p>
+  </mat-card-content>
+</mat-card>
+</div>
+
+
+<div class="prescriptions-container">
+  <h3 class="prescriptions-title">Prescriptions</h3>
+  
+  <mat-card class="prescription-card">
+    <mat-card-title><mat-icon>local_hotel</mat-icon> Disease: Common Cold</mat-card-title>
+    <mat-card-content>Cure: Rest and drink plenty of fluids.</mat-card-content>
+  </mat-card>
+  
+  <mat-card class="prescription-card">
+    <mat-card-title><mat-icon>local_pharmacy</mat-icon> Disease: Influenza</mat-card-title>
+    <mat-card-content>Cure: Antiviral drugs and rest.</mat-card-content>
+  </mat-card>
+
+  <mat-card class="prescription-card">
+    <mat-card-title><mat-icon>healing</mat-icon> Disease: Chickenpox</mat-card-title>
+    <mat-card-content>Cure: Antiviral medications and calamine lotion for itch.</mat-card-content>
+  </mat-card>
+
+  <mat-card class="prescription-card">
+    <mat-card-title><mat-icon>favorite</mat-icon> Disease: Heart Disease</mat-card-title>
+    <mat-card-content>Cure: Medication, lifestyle changes, and in severe cases, surgery.</mat-card-content>
+  </mat-card>
+</div>
+</div>
+</mat-drawer-container>

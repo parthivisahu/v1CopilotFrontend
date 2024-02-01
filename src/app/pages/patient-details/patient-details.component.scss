@@ -1,0 +1,129 @@
+mat-card {
+    background-color: #e0f7fa; // Light cyan color
+    padding: 10px; // Smaller padding
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: all .2s ease-in-out; // Animation
+
+    &:hover {
+        transform: scale(1.05); // Scale up the card when hovered
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3); // Increase the box shadow when hovered
+        cursor: pointer;
+    }
+}
+
+mat-card-header {
+    background-color: #64b5f8; // Lighter blue color
+    color: white; // Text color
+    padding: 10px;
+    transition: background-color .2s ease-in-out; // Animation
+
+    &:hover {
+        background-color: #349bf0; // Change the background color when hovered
+    }
+}
+
+.parent-element {
+    display: flex;
+    align-items: center; // This will vertically align the image with the name and age
+}
+
+.patient-image {
+    width: 150px; // Adjust as needed
+    height: 150px; // Adjust as needed
+    margin-right: 20px; // Add some space between the image and the name
+}
+mat-drawer-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh; // Add this line
+  }
+mat-toolbar {
+    .example-spacer {
+      flex: 1 1 auto;
+    }
+  
+    .spacer {
+      flex: 1 1 auto;
+    }
+  
+    .search-container {
+      justify-content: center;
+      width: 50%;
+      margin-top: 2%;
+    }
+  
+    .example-full-width {
+      width: 90%;
+      height: 90%;
+    }
+  
+    mat-icon {
+      color: rgba(254, 253, 253, 0.941);
+    }
+  }
+  
+ 
+  
+  mat-drawer {
+    width: 250px;
+    box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.3);
+  }
+  
+  mat-drawer-content {
+    padding: 20px;
+  }
+  mat-drawer {
+    width: 250px;
+    max-width: 250px;
+    background-color: #ff6961; /* pastel red */
+    font-family: 'Sans-serif';
+    box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.3);
+  
+    h2 {
+      color: #fff;
+    }
+  
+    ul {
+      list-style-type: none;
+      padding: 0;
+  
+      li {
+        margin-bottom: 10px;
+  
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .example-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .patient-details {
+    display: flex;
+    justify-content: space-between; // This will add space between the patient information and the prescriptions
+}
+
+.patient-info, .prescriptions-container {
+    width: 45%; // This will make each div take up approximately half of the container's width
+}
+  
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+ 
+
+  .prescriptions-title {
+    color: #349bf0; // Change the color
+    padding: 20px 0; // Add some padding
+    border-bottom: 1px solid #349bf0; // Add a border to the bottom
+    font-size: 20px;
+  }

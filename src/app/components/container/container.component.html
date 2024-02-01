@@ -1,0 +1,19 @@
+<mat-drawer-container class="container">
+    <mat-drawer mode="side" opened #drawer class="mat-accent">
+        <ul>
+            <li><a mat-button routerLink="/doctor"><mat-icon>local_hospital</mat-icon>Doctor</a></li>
+            <li><a mat-button routerLink="/patient"><mat-icon>person</mat-icon>Patient's Info</a></li>
+            <li><a mat-button routerLink="/medicine"><mat-icon>local_pharmacy</mat-icon>Medicine</a></li>
+            <li><a mat-button routerLink="/report"><mat-icon>insert_chart</mat-icon>Report</a></li>
+            <li><a mat-button routerLink="/meet-scheduler"><mat-icon>event</mat-icon>Appointment Scheduler</a></li>
+            <li><a mat-button routerLink="/book-appointment"><mat-icon>calendar_today</mat-icon>Book Appointment</a></li>
+            <li><a mat-button routerLink="/payment"><mat-icon>payment</mat-icon>Payment</a></li>
+            <li><a mat-button routerLink="/video-conferencing"><mat-icon>videocam</mat-icon>Online Checkup</a></li>
+        </ul>
+        
+    </mat-drawer>
+    
+    <mat-drawer-content>
+        <router-outlet></router-outlet>
+      </mat-drawer-content>
+</mat-drawer-container>

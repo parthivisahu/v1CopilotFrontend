@@ -1,0 +1,14 @@
+
+  
+  <div class="invoice">
+      <button class="print-button" (click)="printInvoice()">Print</button>
+      <h1>Invoice</h1>
+      <p>Patient: {{invoice.patient}}</p>
+      <p>Doctor: {{invoice.doctor}}</p>
+      <!-- Add more fields as needed -->
+      <div *ngFor="let item of invoice.items">
+          <p>{{item.description}}: {{item.price}}</p>
+        </div>
+        <p>Total: {{invoice.total}}</p>
+        <button (click)="payWithRazorpay()" [disabled]="!invoice">Pay with Razorpay</button>
+    </div>

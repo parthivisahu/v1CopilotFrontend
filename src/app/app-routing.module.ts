@@ -8,10 +8,13 @@ import { VideoConferencingComponent } from './pages/video-conferencing/video-con
 import { MeetingSchedulerComponent } from './pages/meeting-scheduler/meeting-scheduler.component';
 import { BookAppointmentComponent } from './pages/book-appointment/book-appointment.component';
 import { PatientDetailsComponent } from './pages/patient-details/patient-details.component';
+import { SignupComponent } from './signup/signup.component';
+import { PaymentComponent } from './pages/payment/payment.component';
 
 
 const routes: Routes = [
   { path: '',   redirectTo: '/login', pathMatch: 'full'},
+  {path:'signup', component: SignupComponent},
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'doctor', component: DoctorComponent },
@@ -20,6 +23,7 @@ const routes: Routes = [
   { path: 'meet-scheduler', component: MeetingSchedulerComponent},
   { path: 'book-appointment', component: BookAppointmentComponent },
   { path: 'patient-details/:id', component: PatientDetailsComponent },
+  {path:'payment', component: PaymentComponent}
 ];
 
 @NgModule({

@@ -1,98 +1,80 @@
+
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <button mat-icon-button (click)="drawer.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>Health Care Copilot</span>
-
-    <!-- Navigation links -->
-    <span class="example-spacer"></span>
-    <a mat-button routerLink="/home">Home</a>
-    <a mat-button routerLink="/about">About</a>
-    <a mat-button routerLink="/blog">Blog</a>
-    <a mat-button routerLink="/contact">Contact</a>
-
-    <!-- Appointment button -->
-    <span class="spacer"></span>
-    <button mat-raised-button color="accent">Make an Appointment</button>
-
-    <!-- Sign Out button -->
-  <button mat-icon-button matTooltip="Sign-out">
-  <mat-icon>logout</mat-icon>
-</button>
-  </mat-toolbar-row>
-</mat-toolbar>
-
-<!-- Sidebar -->
-
-<mat-drawer-container class="container">
-  <mat-drawer mode="side" opened #drawer class="mat-accent">
-      <ul>
-          <li><a mat-button routerLink="/doctor"><mat-icon>local_hospital</mat-icon>Doctor</a></li>
-          <li><a mat-button routerLink="/patient"><mat-icon>person</mat-icon>Patient's Info</a></li>
-          <li><a mat-button routerLink="/medicine"><mat-icon>local_pharmacy</mat-icon>Medicine</a></li>
-          <li><a mat-button routerLink="/report"><mat-icon>insert_chart</mat-icon>Report</a></li>
-          <li><a mat-button routerLink="/meet-scheduler"><mat-icon>event</mat-icon>Appointment Scheduler</a></li>
-          <li><a mat-button routerLink="/book-appointment"><mat-icon>calendar_today</mat-icon>Book Appointment</a></li>
-          <li><a mat-button routerLink="/payment"><mat-icon>payment</mat-icon>Payment</a></li>
-          <li><a mat-button routerLink="/video-conferencing"><mat-icon>videocam</mat-icon>Online Checkup</a></li>
-        </ul>
-        
-</mat-drawer>
-
-<div class="scheduler">
-  <h1>Meeting Scheduler</h1>
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Health Care Copilot</span>
   
-  <form [formGroup]="meetingForm" (ngSubmit)="scheduleMeeting()">
-    <mat-form-field appearance="fill">
-        <mat-label>Doctor</mat-label>
-        <input matInput formControlName="doctor">
-      </mat-form-field>
+      <!-- Navigation links -->
+      <span class="example-spacer"></span>
+      <a mat-button routerLink="/home">Home</a>
+      <a mat-button routerLink="/about">About</a>
+      <a mat-button routerLink="/blog">Blog</a>
+      <a mat-button routerLink="/contact">Contact</a>
   
-      <mat-form-field appearance="fill">
-        <mat-label>Patient</mat-label>
-        <input matInput formControlName="patient">
-      </mat-form-field>
-      
-      <mat-form-field appearance="fill">
-        <mat-label>Meeting Date</mat-label>
-        <input matInput [matDatepicker]="picker" formControlName="date">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-      
-      <button mat-raised-button color="primary" type="submit">Schedule Meeting</button>
+      <!-- Appointment button -->
+      <span class="spacer"></span>
+      <button mat-raised-button color="accent">Make an Appointment</button>
+  
+      <!-- Sign Out button -->
+    <button mat-icon-button matTooltip="Sign-out">
+    <mat-icon>logout</mat-icon>
+  </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  
+  <!-- Sidebar -->
+
+ <mat-drawer-container class="container">
+    <mat-drawer mode="side" opened #drawer class="mat-accent">
+        <ul>
+            <li><a mat-button routerLink="/doctor"><mat-icon>local_hospital</mat-icon>Doctor</a></li>
+            <li><a mat-button routerLink="/patient"><mat-icon>person</mat-icon>Patient's Info</a></li>
+            <li><a mat-button routerLink="/medicine"><mat-icon>local_pharmacy</mat-icon>Medicine</a></li>
+            <li><a mat-button routerLink="/report"><mat-icon>insert_chart</mat-icon>Report</a></li>
+            <li><a mat-button routerLink="/meet-scheduler"><mat-icon>event</mat-icon>Appointment Scheduler</a></li>
+            <li><a mat-button routerLink="/book-appointment"><mat-icon>calendar_today</mat-icon>Book Appointment</a></li>
+            <li><a mat-button routerLink="/payment"><mat-icon>payment</mat-icon>Payment</a></li>
+            <li><a mat-button routerLink="/video-conferencing"><mat-icon>videocam</mat-icon>Online Checkup</a></li>
+          </ul>
+          
+  </mat-drawer>
+  
+  <!-- Scheduler -->
+  <div class="form-container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-field">
+        <mat-form-field appearance="fill">
+          <mat-label>Doctor</mat-label>
+          <mat-select formControlName="doctor">
+            <mat-option *ngFor="let doctor of doctors" [value]="doctor">{{doctor}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="form-field">
+        <mat-form-field appearance="fill">
+          <mat-label>Patient</mat-label>
+          <input matInput formControlName="patient">
+        </mat-form-field>
+      </div>
+      <div class="form-field">
+        <label>
+          Start Time:
+          <input type="datetime-local" formControlName="startTime">
+        </label>
+      </div>
+      <div class="form-field">
+        <label>
+          End Time:
+          <input type="datetime-local" formControlName="endTime">
+        </label>
+      </div>
+      <div class="form-field">
+        <button class="button" type="submit">Schedule</button>
+      </div>
     </form>
-    
-    <table mat-table [dataSource]="meetings" class="mat-elevation-z8">
-      <!-- Doctor Column -->
-      <ng-container matColumnDef="doctor">
-        <th mat-header-cell *matHeaderCellDef> Doctor </th>
-        <td mat-cell *matCellDef="let meeting"> {{meeting.doctor}} </td>
-      </ng-container>
-      
-      <!-- Patient Column -->
-      <ng-container matColumnDef="patient">
-        <th mat-header-cell *matHeaderCellDef> Patient </th>
-        <td mat-cell *matCellDef="let meeting"> {{meeting.patient}} </td>
-      </ng-container>
-      
-      <!-- Date Column -->
-      <ng-container matColumnDef="date">
-        <th mat-header-cell *matHeaderCellDef> Date </th>
-        <td mat-cell *matCellDef="let meeting"> {{meeting.date | date}} </td>
-      </ng-container>
-      
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
   </div>
-  <div class="calendar-container">
-    <mwl-calendar-month-view
-    [viewDate]="viewDate"
-    [events]="events"
-    (dayClicked)="dayClicked($event.day)"
-    (eventClicked)="eventClicked($event.event)">
-  </mwl-calendar-month-view>
-</div>
+  
+  <full-calendar [options]="calendarOptions"></full-calendar>
 </mat-drawer-container>

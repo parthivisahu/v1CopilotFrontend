@@ -1,160 +1,152 @@
-.scheduler {
+form {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 2em;
-    .calendar-container {
-        width: 100%;
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 1em;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+  }
+  
+  label {
+    margin-bottom: 10px;
+  }
+  
+  input {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  full-calendar {
+    max-width: 900px;
+    margin: 40px auto;
+  }
+  .my-custom-event {
+    padding: 10px;
+    color: white;
+    background-color: #007bff;
+    overflow: hidden;  // Add this line
+    text-overflow: ellipsis;  // Add this line
+    white-space: nowrap;  // Add this line
+    max-width: 100%;  // Add this line
+  }
+  
+  .my-custom-event-title {
+    font-weight: bold;
+  }
+  
+  .my-custom-event-time {
+    font-size: 0.8em;
+  }
 
-        .cal-days {
-            display: flex;
-            flex-direction: row;
-          }
-        
-        .cal-day-column {
-          border: 1px solid #ddd;
-          min-height: 200px;
-          flex: 1;
-        }
-      
-        .cal-header {
-          background-color: #f5f5f5;
-          border-bottom: 1px solid #ddd;
-          padding: 10px;
-          text-align: center;
-        }
-      
-        .cal-cell-top {
-          padding: 10px;
-          text-align: center;
-          background-color: #fafafa;
-          border-bottom: 1px solid #ddd;
-        }
-      
-        .cal-event {
-          border-radius: 4px;
-          padding: 5px;
-          margin: 5px;
-          background-color: #3f51b5;
-          color: #fff;
-        }
-      }
-    h1 {
-      margin-bottom: 1em;
-    }
-  
-    form {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      max-width: 600px;
-      margin-bottom: 2em;
-  
-      mat-form-field {
-        margin-bottom: 1em;
-      }
-    }
-  
-    table {
-      width: 100%;
-      max-width: 800px;
-    }
-}
-
+ 
 mat-toolbar {
-  .example-spacer {
-    flex: 1 1 auto;
+    .example-spacer {
+      flex: 1 1 auto;
+    }
+  
+    .spacer {
+      flex: 1 1 auto;
+    }
+  
+    .search-container {
+      justify-content: center;
+      width: 50%;
+      margin-top: 2%;
+    }
+  
+    .example-full-width {
+      width: 90%;
+      height: 90%;
+    }
+  
+    mat-icon {
+      color: rgba(254, 253, 253, 0.941);
+    }
   }
-
-  .spacer {
-    flex: 1 1 auto;
+ 
+  
+  mat-drawer {
+    width: 250px;
+    box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.3);
   }
-
-  .search-container {
-    justify-content: center;
-    width: 50%;
-    margin-top: 2%;
-  }
-
-
-
-  mat-icon {
-    color: rgba(254, 253, 253, 0.941);
-  }
-}
-
-
-
-
-
-mat-drawer {
-  width: 250px;
-  background-color: #ff6961; /* pastel red */
-  font-family: 'Sans-serif';
-  box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.3);
-
-  h2 {
-    color: #fff;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-
-    li {
-      margin-bottom: 10px;
-
-      a {
-        color: #fff;
-        text-decoration: none;
+  
+ 
+  mat-drawer {
+    width: 250px;
+    max-width: 250px;
+    background-color: #ff6961; /* pastel red */
+    font-family: 'Sans-serif';
+    box-shadow: 3px 0px 7px rgba(0, 0, 0, 0.3);
+  
+    h2 {
+      color: #fff;
+    }
+  
+    ul {
+      list-style-type: none;
+      padding: 0;
+  
+      li {
+        margin-bottom: 10px;
+  
+        a {
+          color: #fff;
+          text-decoration: none;
+        }
       }
     }
   }
-}
-
-
-
-
-
-
-
-
-/* meeting-scheduler.component.css */
-
-.calendar-container {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
-
-mwl-calendar-month-view {
-  max-width: 900px;
-  width: 100%;
-}
-
-mwl-calendar-month-view .cal-day-cell {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 10px;
-}
-
-mwl-calendar-month-view .cal-day-cell.cal-today {
-  background-color: #f2f2f2;
-}
-
-mwl-calendar-month-view .cal-day-cell .cal-events {
-  margin-top: 10px;
-}
-
-mwl-calendar-month-view .cal-day-cell .cal-events .cal-event {
-  display: block;
-  margin-bottom: 5px;
-  padding: 2px 4px;
-  background-color: #3f51b5;
-  color: white;
-  border-radius: 4px;
-}
+ 
+  .form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;  /* Add 20px of padding at the top and bottom */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  /* ... rest of the CSS ... */
+  
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .form-field label {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .button {
+    background-color: #3f51b5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+  
+  .button:hover {
+    background-color: #303f9f;
+  }  
+  
+ 
+  
+ 

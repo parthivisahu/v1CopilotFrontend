@@ -39,7 +39,12 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { VideoConferencingComponent } from './pages/video-conferencing/video-conferencing.component';
 import { ContainerComponent } from './components/container/container.component';
 import { PatientDetailsComponent } from './pages/patient-details/patient-details.component';
-
+import { SignupComponent } from './signup/signup.component';
+import { ScheduleModule, RecurrenceEditorModule } from '@syncfusion/ej2-angular-schedule';
+import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
+import { FullCalendarModule } from '@fullcalendar/angular';
+import { MatSelectModule } from '@angular/material/select';
+import { PaymentComponent } from './pages/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +61,8 @@ import { PatientDetailsComponent } from './pages/patient-details/patient-details
     VideoConferencingComponent,
     ContainerComponent,
     PatientDetailsComponent,
+    SignupComponent,
+    PaymentComponent,
   ],
   imports: [
     BrowserModule,
@@ -86,7 +93,19 @@ import { PatientDetailsComponent } from './pages/patient-details/patient-details
     MatButtonModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+    ScheduleModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
+    RecurrenceEditorModule,
+    ButtonModule,
+    FullCalendarModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatInputModule,    
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

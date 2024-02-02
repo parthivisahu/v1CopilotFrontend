@@ -39,7 +39,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { VideoConferencingComponent } from './pages/video-conferencing/video-conferencing.component';
 import { ContainerComponent } from './components/container/container.component';
 import { PatientDetailsComponent } from './pages/patient-details/patient-details.component';
-import { SignupComponent } from './signup/signup.component';
+import { SignupComponent } from './components/signup/signup.component';
 import { ScheduleModule, RecurrenceEditorModule } from '@syncfusion/ej2-angular-schedule';
 import { ButtonModule } from '@syncfusion/ej2-angular-buttons';
 import { FullCalendarModule } from '@fullcalendar/angular';

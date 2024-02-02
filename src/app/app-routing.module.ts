@@ -8,7 +8,7 @@ import { VideoConferencingComponent } from './pages/video-conferencing/video-con
 import { MeetingSchedulerComponent } from './pages/meeting-scheduler/meeting-scheduler.component';
 import { BookAppointmentComponent } from './pages/book-appointment/book-appointment.component';
 import { PatientDetailsComponent } from './pages/patient-details/patient-details.component';
-import { SignupComponent } from './signup/signup.component';
+import { SignupComponent } from './components/signup/signup.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 
 
